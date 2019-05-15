@@ -1,0 +1,34 @@
+ISR(INT3_vect)
+{
+	refleksTaeller ++
+	
+	if(refleksTaeller == 2)
+	{
+		setSpeed(50);
+	}
+	
+	if(refleksTaeller == 3)
+	{
+		setSpeed(30);
+	}
+	
+	if(refleksTaeller == 6)
+	{
+		setDirection(1);
+		setSpeed(60);
+	}
+	
+	if(refleksTaeller == 8)
+	
+	{
+		setDirection(0);
+		setSpeed(90);
+	}
+	
+	if(refleksTaeller == 12)
+	
+	{
+		stop();
+	}
+	_delay_ms(100);
+}
