@@ -35,11 +35,9 @@ void setDirection(unsigned char dir)
 	if(dir == 0)
 	{
 		PORTL &= 0b01111111;
-		PORTL |= 0b01000000; 
 	}
 	else if( dir == 1)
 		{
 		PORTL |= 0b10000000;
-		PORTL &= 0b10111111;
 		}
 }
