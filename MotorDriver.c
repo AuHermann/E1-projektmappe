@@ -17,7 +17,7 @@ void initMotor()
 
 void start()
 {
-	TCCR5B |= 0b00000101;
+	TCCR5B |= 0b00000011;
 }
 
 void stop()
