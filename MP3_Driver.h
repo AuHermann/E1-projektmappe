@@ -2,8 +2,7 @@
  * MP3_Driver.h
  *
  * Created: 15-05-2019 09:48:09
- *  Author: dryos
+ *  Author: Bastian
  */ 
 void initMP3();
 void playSound(char soundChoice);
-void volumeSet();
