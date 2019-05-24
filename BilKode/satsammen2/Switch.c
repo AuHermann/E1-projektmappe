@@ -15,8 +15,8 @@ void initSwitchPort()
 {
 	DDRD = 0; //SÆtter port D til indgange
 	EICRA =0b11101010;
-	EICRB = 0b00000000;
-	EIMSK = 0b00001111;
+	EICRB = 0b00000011;
+	EIMSK = 0b00011111;
 	sei();
 }
 
