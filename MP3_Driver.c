@@ -20,6 +20,14 @@ void initMP3()
 	SendChar(0xDC);
 	SendChar(0xEF);
 	_delay_ms(1000);
+	SendChar(0x7E);
+	SendChar(0x09); 
+	SendChar(0x00); 
+	SendChar(0x00); 
+	SendChar(0x02); 
+	SendChar(0xFF); 
+	SendChar(0xF5);
+	SendChar(0xEF); 
 }
 void playSound(char soundChoice)
 {
