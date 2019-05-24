@@ -147,6 +147,80 @@ ISR(INT3_vect)
 	EIFR |= (1<<INTF3);
 }
 
+ISR(INT4_vect)
+{
+	refleksTaeller ++;
+	
+	if(refleksTaeller == 1)
+	{
+		
+		playSound(2);
+	}
+	
+	if(refleksTaeller == 2)
+	{
+		
+		playSound(2);
+	}
+	
+	if(refleksTaeller == 3)
+	{
+		setSpeed(60);
+		playSound(2);
+	}
+	
+	if(refleksTaeller == 4)
+	
+	{
+		setSpeed(90);
+		playSound(2);
+	}
+	
+	if(refleksTaeller == 5)
+	
+	{
+		setSpeed(50);
+		playSound(2);
+	}
+	if(refleksTaeller == 6)
+	{
+		setDirection(0);
+		
+		playSound(2);
+	}
+	
+	if(refleksTaeller == 7)
+	{
+		playSound(2);
+	}
+	
+	if(refleksTaeller == 8)
+	{
+		setDirection(1);
+		setSpeed(90);
+		playSound(2);
+	}
+	
+	if(refleksTaeller == 9)
+	
+	{
+		playSound(2);
+	}
+	
+	if(refleksTaeller == 10)
+	
+	{
+		playSound(2);
+	}
+	if(refleksTaeller == 11)
+	
+	{
+		stop();
+		playSound(3);
+	}
+	_delay_ms(10);
+	EIFR |= (1<<INTF4);
+}
 
 
 #endif /* ISR_H_ */
