@@ -25,11 +25,11 @@ int main(void)
 	initDoor();
 	initLedPort();
 	InitUART(9600, 8);
+	_delay_ms(1000);
 	initMP3();
-	volumeSet();
 	_delay_ms(1000);
 	playSound(1);
-	_delay_ms(10000);
+	_delay_ms(1000);
 	start();
 
 	  /* Replace with your application code */

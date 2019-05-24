@@ -19,13 +19,19 @@ void initMotor()
 
 void start()
 {
-	setspeed(90);
+	int i;
+	for(i = 0; i > 90; i++)
+	{
+		setSpeed(i);
+		_delay_ms(50);
+	}
+	setSpeed(90);
 	turnOn(1);
 }
 
 void stop()
 {
-	setspeed(0);
+	setSpeed(0);
 	turnOff(1);
 	
 }
@@ -42,7 +48,7 @@ void setDirection(unsigned char dir)
 		PORTL &= 0b01111111;
 	}
 	else if( dir == 1)
-		{
+	{
 		PORTL |= 0b10000000;
-		}
+	}
 }
