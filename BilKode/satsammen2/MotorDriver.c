@@ -10,24 +10,24 @@
 
 void initMotor()
 {
-	DDRL =	 0b10000000;
+	DDRL =	 0b10001000;
 	TCCR5A = 0b10000011;
 	TCCR5B = 0b00000101;
-	setSpeed(99);
+	setSpeed(0);
 	setDirection(1);
 }
 
 void start()
 {
-	DDRL |=   0b00001000;
+	setspeed(90);
 	turnOn(1);
 }
 
 void stop()
 {
-	DDRL = 0;
+	setspeed(0);
 	turnOff(1);
-	OCR5A = 0;
+	
 }
 
 void setSpeed(int speed)

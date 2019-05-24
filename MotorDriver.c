@@ -12,7 +12,7 @@ void initMotor()
 	DDRL = 0xff;
 	TCCR5A = 0b10000011;
 	TCCR5B = 0b00000000;
-	setSpeed(512);
+	setSpeed(0);
 }
 
 void start()
