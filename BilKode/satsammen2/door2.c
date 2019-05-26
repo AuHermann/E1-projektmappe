@@ -13,54 +13,54 @@ int pos = 0;
 
 void initDoor(void)
 {
-	closeDoorH();
-	closeDoorV();
-}
-void openDoorH(void)
-{
-	DDRH = 0xFF;
-	ICR4 = 2500;
-	TCCR4A = 0b11000000;
+	DDRH |= 0b00011000;
+	TCCR4A = 0b11110000;
 	TCCR4B = 0b00010011;
-	for (pos=0; pos <=150; pos++)
+	ICR4 = 2500;
+	OCR4A = 2250;
+	OCR4B = 2250;
+}
+
+void openDoor(unsigned char side)
+{
+	if (side == 'h')
 	{
-		OCR4A = (1*pos)+2250;
-		_delay_ms(10);
+		for (pos=0; pos <=69; pos++)
+		{
+			OCR4A = (1*pos)+2250;
+			_delay_ms(10);
+		}
+	}
+	else if (side == 'v')
+	{
+		for (pos=0; pos <=69; pos++)
+		{
+			OCR4B = (1*pos)+2250;
+			_delay_ms(10);
+		}
 	}
 }
-void closeDoorH(void)
+
+void closeDoor(unsigned char side)
 {
-	DDRH = 0xFF;
-	ICR4 = 2500;
-	TCCR4A = 0b11000000;
-	TCCR4B = 0b00010011;
-	for (pos=150; pos >=0; pos--)
+	if (side == 'h')
 	{
-		OCR4A = (1*pos)+2250;
-		_delay_ms(10);
+		for (pos=69; pos >=0; pos--)
+		{
+			OCR4A = (1*pos)+2250;
+			_delay_ms(10);
+		}
+	}
+	else if (side == 'v')
+	{
+		for (pos=69; pos >=0; pos--)
+		{
+			OCR4B = (1*pos)+2250;
+			_delay_ms(10);
+		}
 	}
 }
-void openDoorV(void)
-{
-	DDRH = 0xFF;
-	ICR4 = 2500;
-	TCCR4A = 0b00110000;
-	TCCR4B = 0b00010011;
-	for (pos=0; pos <=150; pos++)
-	{
-		OCR4B = (1*pos)+2250;
-		_delay_ms(10);
-	}
-}
-void closeDoorV(void)
-{
-	DDRH = 0xFF;
-	ICR4 = 2500;
-	TCCR4A = 0b00110000;
-	TCCR4B = 0b00010011;
-	for (pos=150; pos >=0; pos--)
-	{
-		OCR4B = (1*pos)+2250;
-		_delay_ms(10);
-	}
-}
+
+
+
+

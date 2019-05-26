@@ -31,11 +31,12 @@ int main(void)
 	playSound(1);
 	_delay_ms(1000);
 	start();
-
+	_delay_ms(2000);
+	brake(1);
 	  /* Replace with your application code */
     while (1) 
     {
-		
+		;
     }
 }
 

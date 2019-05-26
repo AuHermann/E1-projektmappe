@@ -23,12 +23,12 @@ ISR(INT0_vect)
 {
 	if (hd == 0)
 	{
-		openDoorH();
+		openDoor('h');
 		hd = 1;
 	}
 	else
 	{
-		closeDoorH();
+		closeDoor('h');
 		hd = 0;
 	}
 	EIFR |= (1<<INTF0);
@@ -37,12 +37,12 @@ ISR(INT1_vect)
 {
 	if (vd == 0)
 	{
-		openDoorV();
+		openDoor('v');
 		vd = 1;
 	}
 	else
 	{
-		closeDoorV();
+		closeDoor('v');
 		vd = 0;
 	}
 	EIFR |= (1<<INTF1);

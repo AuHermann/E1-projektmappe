@@ -11,10 +11,9 @@
 
 #include <avr/io.h>
 void initDoor(void);
-void openDoorH(void);
-void closeDoorH(void);
-void openDoorV(void);
-void closeDoorV(void);
+void openDoor(unsigned char Side);
+void closeDoor(unsigned char side);
+
 
 
 #endif /* DOOR2_H_ */
