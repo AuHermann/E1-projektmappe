@@ -25,6 +25,7 @@ void start()
 
 void stop()
 {
+	_delay_ms(500);
 	setSpeed(0);
 	turnOff(1);
 	

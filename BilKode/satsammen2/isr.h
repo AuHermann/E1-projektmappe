@@ -70,21 +70,18 @@ ISR(INT3_vect)
 	{
 		
 		playSound(2);
-		
 	}
 	
 	if(refleksTaeller == 2)
 	{
 		setSpeed(85);
 		playSound(2);
-		
 	}
 	
 	if(refleksTaeller == 3)
 	{
 		setSpeed(55);
 		playSound(2);
-		
 	}
 	
 	if(refleksTaeller == 4)
@@ -92,71 +89,51 @@ ISR(INT3_vect)
 	{
 		setSpeed(90);
 		playSound(2);
-		
 	}
 	
 	if(refleksTaeller == 5)
 	
 	{
-		setSpeed(50);
+		slowDown(20,90,50);
 		playSound(2);
-		
 	}
 	if(refleksTaeller == 6)
 	{
-		int i;
-		for(i = 50; i > 0; i--)
-		{
-			setSpeed(i);
-			_delay_ms(20);
-		}
-		
+		slowDown(20,50,0);
 		setDirection(0);
 		setSpeed(68);
 		playSound(2);
-		
 	}
 	
 	if(refleksTaeller == 7)
 	{
 		playSound(2);
-		
 	}
 	
 	if(refleksTaeller == 8)
 	{
-		int i;
-		for(i = 50; i > 0; i--)
-		{
-			setSpeed(i);
-			_delay_ms(20);
-		}
+		slowDown(20,50,0);
 		setDirection(1);
 		setSpeed(90);
 		playSound(2);
-		
 	}
 	
 	if(refleksTaeller == 9)
 	
 	{
 		playSound(2);
-	
 	}
 	
 	if(refleksTaeller == 10)
 	
 	{
 		playSound(2);
-		
 	}
 	if(refleksTaeller == 11)
 	
 	{
-		_delay_ms(500);
 		stop();
 		playSound(3);
-		
 	}
 	_delay_ms(1000);
 	EIFR |= (1<<INTF3);
@@ -194,18 +171,12 @@ ISR(INT4_vect)
 	if(refleksTaeller == 5)
 	
 	{
-		setSpeed(50);
+		slowDown(20,90,50);
 		playSound(2);
 	}
 	if(refleksTaeller == 6)
 	{
-		int i;
-		for(i = 50; i > 0; i--)
-		{
-			setSpeed(i);
-			_delay_ms(20);
-		}
-		
+		slowDown(20,50,0);		
 		setDirection(0);
 		setSpeed(68);
 		playSound(2);
@@ -218,12 +189,7 @@ ISR(INT4_vect)
 	
 	if(refleksTaeller == 8)
 	{
-		int i;
-		for(i = 50; i > 0; i--)
-		{
-			setSpeed(i);
-			_delay_ms(20);
-		}
+		slowDown(20,50,0);
 		setDirection(1);
 		setSpeed(90);
 		playSound(2);
@@ -243,7 +209,6 @@ ISR(INT4_vect)
 	if(refleksTaeller == 11)
 	
 	{
-		_delay_ms(500);
 		stop();
 		playSound(3);
 	}
