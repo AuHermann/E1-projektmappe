@@ -19,12 +19,6 @@ void initMotor()
 
 void start()
 {
-	int i;
-	for(i = 0; i > 90; i++)
-	{
-		setSpeed(i);
-		_delay_ms(50);
-	}
 	setSpeed(90);
 	turnOn(1);
 }
@@ -50,5 +44,23 @@ void setDirection(unsigned char dir)
 	else if( dir == 1)
 	{
 		PORTL |= 0b10000000;
+	}
+}
+void speedUp(unsigned char delay, unsigned char currentSpeed, unsigned char speedTarget)
+{
+int i;
+	for(i = currentSpeed; i > speedTarget; i++)
+	{
+		setSpeed(i);
+		_delay_ms(delay);
+	}
+}
+void slowDown(unsigned char delay, unsigned char currentSpeed, unsigned char speedTarget)
+{
+int i;
+	for(i = currentSpeed; i < speedTarget; i--)
+	{
+		setSpeed(i);
+		_delay_ms(delay);
 	}
 }
