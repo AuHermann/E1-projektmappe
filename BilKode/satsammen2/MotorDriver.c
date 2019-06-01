@@ -4,9 +4,12 @@
  * Created: 15-05-2019 08:32:15
  *  Author: Andreas Hermann
  */ 
+#define F_CPU 16000000
 #include "MotorDriver.h"
 #include "Led.h"
 #include <avr/io.h>
+#include <util/delay.h>
+unsigned char currentSpeed = 0;
 
 void initMotor()
 {
@@ -34,6 +37,7 @@ void stop()
 void setSpeed(int speed)
 {
 	OCR5A = (speed*(1024/100));
+	currentSpeed = speed;
 }
 
 void setDirection(unsigned char dir)
@@ -47,7 +51,7 @@ void setDirection(unsigned char dir)
 		PORTL |= 0b10000000;
 	}
 }
-void speedUp(unsigned char delay, unsigned char currentSpeed, unsigned char speedTarget)
+void speedUp(unsigned char delay, unsigned char speedTarget)
 {
 int i;
 	for(i = currentSpeed; i > speedTarget; i++)
@@ -56,7 +60,7 @@ int i;
 		_delay_ms(delay);
 	}
 }
-void slowDown(unsigned char delay, unsigned char currentSpeed, unsigned char speedTarget)
+void slowDown(unsigned char delay, unsigned char speedTarget)
 {
 int i;
 	for(i = currentSpeed; i < speedTarget; i--)

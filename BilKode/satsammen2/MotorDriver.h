@@ -12,7 +12,7 @@ void start();
 void stop();
 void setSpeed(int speed);
 void setDirection(unsigned char dir);
-void speedUp(unsigned char delay, unsigned char currentSpeed, unsigned char speedTarget);
-void slowDown(unsigned char delay, unsigned char currentSpeed, unsigned char speedTarget);
+void speedUp(unsigned char delay, unsigned char speedTarget);
+void slowDown(unsigned char delay, unsigned char speedTarget);
 
 
