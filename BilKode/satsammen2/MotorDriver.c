@@ -30,6 +30,8 @@ void stop()
 {
 	_delay_ms(500);
 	setSpeed(0);
+	brake(2);
+	_delay_ms(50);
 	turnOff(1);
 	
 }
@@ -53,19 +55,28 @@ void setDirection(unsigned char dir)
 }
 void speedUp(unsigned char delay, unsigned char speedTarget)
 {
-int i;
+	int i,p;
 	for(i = currentSpeed; i > speedTarget; i++)
 	{
 		setSpeed(i);
-		_delay_ms(delay);
+		for (p = 0; i < delay; i++)
+		{
+			_delay_ms(1);
+		}
 	}
 }
 void slowDown(unsigned char delay, unsigned char speedTarget)
 {
-int i;
+	int i,p;
+	brake(2);
 	for(i = currentSpeed; i < speedTarget; i--)
 	{
 		setSpeed(i);
-		_delay_ms(delay);
+		for (p = 0; i < delay; i++)
+			{
+				_delay_ms(1);
+			}
 	}
+	_delay_ms(50);
+	turnOn(1);
 }
