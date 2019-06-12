@@ -29,7 +29,6 @@ void brake()
 }
 void turnOff()
 {
-		brake(1);
 		OCR2A = 0;
 		OCR2B = 0;
 }
