@@ -30,14 +30,12 @@ int main(void)
 	_delay_ms(1000);
 	playSound(1);
 	_delay_ms(1000);
-	start();
-	speedUp(20,90);
-	_delay_ms(2000);
-	brake(1);
+	start();	
+
 	  /* Replace with your application code */
     while (1) 
     {
-		;
+		
     }
 }
 

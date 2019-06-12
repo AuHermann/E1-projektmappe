@@ -22,7 +22,7 @@ void initMotor()
 
 void start()
 {
-	setSpeed(90);
+	speedUp(20, 90);
 	turnOn();
 }
 
@@ -55,28 +55,30 @@ void setDirection(unsigned char dir)
 }
 void speedUp(unsigned char delay, unsigned char speedTarget)
 {
-	int i,p;
-	for(i = currentSpeed; i > speedTarget; i++)
+	int i ,p;
+	for(i=currentSpeed; i < speedTarget; i++)
 	{
 		setSpeed(i);
-		for (p = 0; i < delay; i++)
+		for (p = 0; p < delay; p++)
 		{
 			_delay_ms(1);
 		}
 	}
+	currentSpeed = speedTarget;
 }
 void slowDown(unsigned char delay, unsigned char speedTarget)
 {
 	int i,p;
 	brake();
-	for(i = currentSpeed; i < speedTarget; i--)
+	for(i = currentSpeed; i > speedTarget; i--)
 	{
 		setSpeed(i);
-		for (p = 0; i < delay; i++)
+		for (p = 0; p < delay; p++)
 			{
 				_delay_ms(1);
 			}
 	}
+	
 	_delay_ms(500);
 	turnOn();
 }
