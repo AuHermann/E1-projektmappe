@@ -23,16 +23,16 @@ void initMotor()
 void start()
 {
 	setSpeed(90);
-	turnOn(1);
+	turnOn();
 }
 
 void stop()
 {
 	_delay_ms(500);
 	setSpeed(0);
-	brake(2);
-	_delay_ms(50);
-	turnOff(1);
+	brake();
+	_delay_ms(500);
+	turnOff();
 	
 }
 
@@ -68,7 +68,7 @@ void speedUp(unsigned char delay, unsigned char speedTarget)
 void slowDown(unsigned char delay, unsigned char speedTarget)
 {
 	int i,p;
-	brake(2);
+	brake();
 	for(i = currentSpeed; i < speedTarget; i--)
 	{
 		setSpeed(i);
@@ -77,6 +77,6 @@ void slowDown(unsigned char delay, unsigned char speedTarget)
 				_delay_ms(1);
 			}
 	}
-	_delay_ms(50);
-	turnOn(1);
+	_delay_ms(500);
+	turnOn();
 }

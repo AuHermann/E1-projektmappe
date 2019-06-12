@@ -9,9 +9,9 @@
 #ifndef LED1_H_
 #define LED1_H_
 void initLedPort();
-void turnOn(unsigned char ledPort);
-void turnOff(unsigned char ledPort);
-void brake(unsigned char ledPort);
+void turnOn();
+void turnOff();
+void brake();
 
 
 #endif /* LED1_H_ */
