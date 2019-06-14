@@ -22,7 +22,7 @@ void initMotor()
 
 void start()
 {
-	speedUp(20, 90);
+	speedUp(10, 90);
 	turnOn();
 }
 

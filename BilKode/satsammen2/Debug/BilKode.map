@@ -213,7 +213,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x938
+.text           0x00000000      0x934
  *(.vectors)
  .vectors       0x00000000       0xe4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
@@ -352,53 +352,53 @@ END GROUP
                 0x0000035c       0x6a main.o
                 0x0000035c                __vector_3
  .text.__vector_4
-                0x000003c6      0x124 main.o
+                0x000003c6      0x122 main.o
                 0x000003c6                __vector_4
  .text.__vector_5
-                0x000004ea      0x124 main.o
-                0x000004ea                __vector_5
- .text.main     0x0000060e       0x54 main.o
-                0x0000060e                main
+                0x000004e8      0x122 main.o
+                0x000004e8                __vector_5
+ .text.main     0x0000060a       0x54 main.o
+                0x0000060a                main
  .text.setSpeed
-                0x00000662       0x24 MotorDriver.o
-                0x00000662                setSpeed
- .text.stop     0x00000686       0x30 MotorDriver.o
-                0x00000686                stop
+                0x0000065e       0x24 MotorDriver.o
+                0x0000065e                setSpeed
+ .text.stop     0x00000682       0x30 MotorDriver.o
+                0x00000682                stop
  .text.setDirection
-                0x000006b6       0x20 MotorDriver.o
-                0x000006b6                setDirection
+                0x000006b2       0x20 MotorDriver.o
+                0x000006b2                setDirection
  .text.initMotor
-                0x000006d6       0x1e MotorDriver.o
-                0x000006d6                initMotor
- .text.speedUp  0x000006f4       0x64 MotorDriver.o
-                0x000006f4                speedUp
- .text.start    0x00000758        0xa MotorDriver.o
-                0x00000758                start
+                0x000006d2       0x1e MotorDriver.o
+                0x000006d2                initMotor
+ .text.speedUp  0x000006f0       0x64 MotorDriver.o
+                0x000006f0                speedUp
+ .text.start    0x00000754        0xa MotorDriver.o
+                0x00000754                start
  .text.slowDown
-                0x00000762       0x70 MotorDriver.o
-                0x00000762                slowDown
- .text.initMP3  0x000007d2       0x54 MP3_Driver.o
-                0x000007d2                initMP3
+                0x0000075e       0x70 MotorDriver.o
+                0x0000075e                slowDown
+ .text.initMP3  0x000007ce       0x54 MP3_Driver.o
+                0x000007ce                initMP3
  .text.playSound
-                0x00000826       0x2a MP3_Driver.o
-                0x00000826                playSound
+                0x00000822       0x2a MP3_Driver.o
+                0x00000822                playSound
  .text.initSwitchPort
-                0x00000850       0x1a Switch.o
-                0x00000850                initSwitchPort
+                0x0000084c       0x1a Switch.o
+                0x0000084c                initSwitchPort
  .text.InitUART
-                0x0000086a       0x76 uart.o
-                0x0000086a                InitUART
+                0x00000866       0x76 uart.o
+                0x00000866                InitUART
  .text.SendChar
-                0x000008e0       0x10 uart.o
-                0x000008e0                SendChar
+                0x000008dc       0x10 uart.o
+                0x000008dc                SendChar
  .text.libgcc.div
-                0x000008f0       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
-                0x000008f0                __udivmodsi4
-                0x00000934                . = ALIGN (0x2)
+                0x000008ec       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
+                0x000008ec                __udivmodsi4
+                0x00000930                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000934        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
-                0x00000934                _exit
-                0x00000934                exit
+ .fini9         0x00000930        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+                0x00000930                _exit
+                0x00000930                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -417,11 +417,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000934        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+ .fini0         0x00000930        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000938                _etext = .
+                0x00000934                _etext = .
 
-.data           0x00800200        0x0 load address 0x00000938
+.data           0x00800200        0x0 load address 0x00000934
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -453,8 +453,8 @@ END GROUP
                 0x00800206                currentSpeed
  *(COMMON)
                 0x00800207                PROVIDE (__bss_end, .)
-                0x00000938                __data_load_start = LOADADDR (.data)
-                0x00000938                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000934                __data_load_start = LOADADDR (.data)
+                0x00000934                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800207        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -551,16 +551,16 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1f54
+.debug_info     0x00000000     0x1f4a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0xbbc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_info    0x00000bbc      0x21b door2.o
  .debug_info    0x00000dd7       0xc1 Led.o
- .debug_info    0x00000e98      0x7c4 main.o
- .debug_info    0x0000165c      0x417 MotorDriver.o
- .debug_info    0x00001a73      0x31b MP3_Driver.o
- .debug_info    0x00001d8e       0x82 Switch.o
- .debug_info    0x00001e10      0x144 uart.o
+ .debug_info    0x00000e98      0x7ba main.o
+ .debug_info    0x00001652      0x417 MotorDriver.o
+ .debug_info    0x00001a69      0x31b MP3_Driver.o
+ .debug_info    0x00001d84       0x82 Switch.o
+ .debug_info    0x00001e06      0x144 uart.o
 
 .debug_abbrev   0x00000000     0x118e
  *(.debug_abbrev)
@@ -594,22 +594,22 @@ END GROUP
  .debug_frame   0x00000378       0x24 Switch.o
  .debug_frame   0x0000039c       0x60 uart.o
 
-.debug_str      0x00000000      0x789
+.debug_str      0x00000000      0x7c1
  *(.debug_str)
  .debug_str     0x00000000      0x3e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .debug_str     0x000003e6      0x1b2 door2.o
                                 0x1e6 (size before relaxing)
  .debug_str     0x00000598       0x2c Led.o
                                 0x190 (size before relaxing)
- .debug_str     0x000005c4       0xb5 main.o
-                                0x28c (size before relaxing)
- .debug_str     0x00000679       0x40 MotorDriver.o
-                                0x241 (size before relaxing)
- .debug_str     0x000006b9       0x27 MP3_Driver.o
+ .debug_str     0x000005c4       0xed main.o
+                                0x282 (size before relaxing)
+ .debug_str     0x000006b1       0x40 MotorDriver.o
+                                0x237 (size before relaxing)
+ .debug_str     0x000006f1       0x27 MP3_Driver.o
                                 0x1e5 (size before relaxing)
- .debug_str     0x000006e0       0x6f Switch.o
+ .debug_str     0x00000718       0x6f Switch.o
                                 0x1a0 (size before relaxing)
- .debug_str     0x0000074f       0x3a uart.o
+ .debug_str     0x00000787       0x3a uart.o
                                 0x1be (size before relaxing)
 
 .debug_loc      0x00000000      0xc32

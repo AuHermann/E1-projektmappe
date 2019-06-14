@@ -94,12 +94,12 @@ ISR(INT3_vect)
 	if(refleksTaeller == 5)
 	
 	{
-		slowDown(20,50);
+		slowDown(5,50);
 		playSound(2);
 	}
 	if(refleksTaeller == 6)
 	{
-		slowDown(20,0);
+		slowDown(5,0);
 		setDirection(0);
 		setSpeed(68);
 		playSound(2);
@@ -112,7 +112,7 @@ ISR(INT3_vect)
 	
 	if(refleksTaeller == 8)
 	{
-		slowDown(20,0);
+		slowDown(5,0);
 		setDirection(1);
 		setSpeed(90);
 		playSound(2);
@@ -171,12 +171,12 @@ ISR(INT4_vect)
 	if(refleksTaeller == 5)
 	
 	{
-		slowDown(20,50);
+		slowDown(5,50);
 		playSound(2);
 	}
 	if(refleksTaeller == 6)
 	{
-		slowDown(20,0);		
+		slowDown(5,0);		
 		setDirection(0);
 		setSpeed(68);
 		playSound(2);
@@ -189,7 +189,7 @@ ISR(INT4_vect)
 	
 	if(refleksTaeller == 8)
 	{
-		slowDown(20,0);
+		slowDown(5,0);
 		setDirection(1);
 		setSpeed(90);
 		playSound(2);
