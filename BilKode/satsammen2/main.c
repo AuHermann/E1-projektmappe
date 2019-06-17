@@ -20,6 +20,7 @@
 
 int main(void)
 {
+	cli();
 	initSwitchPort();
 	initMotor();
 	initDoor();
@@ -29,7 +30,8 @@ int main(void)
 	initMP3();
 	_delay_ms(1000);
 	playSound(1);
-	_delay_ms(1000);
+	_delay_ms(11000);
+	sei();
 	start();	
 
 	  /* Replace with your application code */

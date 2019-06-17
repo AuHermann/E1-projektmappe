@@ -9,7 +9,7 @@
 #include "Led.h"
 #include <avr/io.h>
 #include <util/delay.h>
-unsigned char currentSpeed = 0;
+unsigned char currentSpeed = 30;
 
 void initMotor()
 {
@@ -18,12 +18,13 @@ void initMotor()
 	TCCR5B = 0b00000101;
 	setSpeed(0);
 	setDirection(1);
+	currentSpeed = 40;
 }
 
 void start()
 {
-	speedUp(10, 90);
 	turnOn();
+	speedUp(10, 90);
 }
 
 void stop()
@@ -64,7 +65,6 @@ void speedUp(unsigned char delay, unsigned char speedTarget)
 			_delay_ms(1);
 		}
 	}
-	currentSpeed = speedTarget;
 }
 void slowDown(unsigned char delay, unsigned char speedTarget)
 {
@@ -79,6 +79,5 @@ void slowDown(unsigned char delay, unsigned char speedTarget)
 			}
 	}
 	
-	_delay_ms(500);
-	turnOn();
+	
 }

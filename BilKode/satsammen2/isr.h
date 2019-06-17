@@ -12,14 +12,14 @@
 #include "door2.h"
 #include "Switch.h"
 #include "MP3_Driver.h"
-
+#include "Led.h"
 
 unsigned char hd = 0;
 unsigned char vd = 0;
 unsigned char bil = 0;
 unsigned char refleksTaeller = 0;
 
-ISR(INT0_vect)
+ISR(INT3_vect)
 {
 	if (hd == 0)
 	{
@@ -31,9 +31,9 @@ ISR(INT0_vect)
 		closeDoor('h');
 		hd = 0;
 	}
-	EIFR |= (1<<INTF0);
+	EIFR |= (1<<INTF3);
 }
-ISR(INT1_vect)
+ISR(INT4_vect)
 {
 	if (vd == 0)
 	{
@@ -45,7 +45,7 @@ ISR(INT1_vect)
 		closeDoor('v');
 		vd = 0;
 	}
-	EIFR |= (1<<INTF1);
+	EIFR |= (1<<INTF4);
 }
 ISR(INT2_vect)
 {
@@ -62,8 +62,9 @@ ISR(INT2_vect)
 	}
 	EIFR |= (1<<INTF2);
 }
-ISR(INT3_vect)
+ISR(INT0_vect)
 {
+	cli();
 	refleksTaeller ++;
 	
 	if(refleksTaeller == 1)
@@ -138,15 +139,20 @@ ISR(INT3_vect)
 	if(refleksTaeller == 11)
 	
 	{
+		playSound(2);
 		stop();
 		playSound(3);
 	}
-	_delay_ms(1000);
-	EIFR |= (1<<INTF3);
+	_delay_ms(500);
+	turnOn();
+	_delay_ms(500);
+	EIFR |= (1<<INTF0);
+	sei();
 }
 
-ISR(INT4_vect)
+ISR(INT1_vect)
 {
+	cli();
 	refleksTaeller ++;
 	
 	if(refleksTaeller == 1)
@@ -221,11 +227,15 @@ ISR(INT4_vect)
 	if(refleksTaeller == 11)
 	
 	{
+		playSound(2);
 		stop();
 		playSound(3);
 	}
-	_delay_ms(1000);
-	EIFR |= (1<<INTF4);
+	_delay_ms(500);
+	turnOn();
+	_delay_ms(500);
+	EIFR |= (1<<INTF1);
+	sei();
 }
 
 #endif /* ISR_H_ */
