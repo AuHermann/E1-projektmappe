@@ -15,16 +15,16 @@ void initMotor()
 {
 	DDRL =	 0b10001000;
 	TCCR5A = 0b10000011;
-	TCCR5B = 0b00000101;
+	TCCR5B = 0b00000011;
 	setSpeed(0);
 	setDirection(1);
-	currentSpeed = 40;
+	currentSpeed = 50;
 }
 
 void start()
 {
 	turnOn();
-	speedUp(10, 90);
+	speedUp(5, 90);
 }
 
 void stop()

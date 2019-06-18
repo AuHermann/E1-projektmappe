@@ -11,6 +11,7 @@
 
 void initMP3()
 {
+	DDRJ |= 0b00000011;
 	SendChar(0x7E);
 	SendChar(0x06);
 	SendChar(0x00);

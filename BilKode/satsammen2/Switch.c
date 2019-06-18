@@ -18,6 +18,6 @@ void initSwitchPort()
 	EICRA = 0xAF;
 	EICRB = 0b00000010;
 	EIMSK = 0b00011111;
-	sei();
+	
 }
 

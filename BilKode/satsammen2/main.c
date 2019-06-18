@@ -20,20 +20,22 @@
 
 int main(void)
 {
-	cli();
+	sei();
 	initSwitchPort();
 	initMotor();
 	initDoor();
 	initLedPort();
 	InitUART(9600, 8);
 	_delay_ms(1000);
+	InitUART2(9600,8);
+	_delay_ms(1000);
 	initMP3();
 	_delay_ms(1000);
 	playSound(1);
 	_delay_ms(11000);
-	sei();
 	start();	
-
+	_delay_ms(3000);
+	
 	  /* Replace with your application code */
     while (1) 
     {
