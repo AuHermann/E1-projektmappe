@@ -47,26 +47,29 @@ ISR(INT4_vect)
 	}
 	EIFR |= (1<<INTF4);
 }
-ISR(INT5_vect)
+ISR(INT2_vect)
 {
 	if (bil == 0)
 	{
-		refleksTaeller = 0;
-		start();
 		bil = 1;
+		refleksTaeller = 0;
+		playSound(1);
+		_delay_ms(11000);
+		start();
+		
 	}
 	else
 	{
 		stop();
 		bil = 0;
 	}
-	EIFR |= (1<<INTF5);
+	EIFR |= (1<<INTF2);
 }
 ISR(INT0_vect)
 {
 	cli();
 	refleksTaeller ++;
-	SendChar2('h');
+	
 	if(refleksTaeller == 1)
 	{
 		
@@ -106,6 +109,8 @@ ISR(INT0_vect)
 	{
 		playSound(2);
 		slowDown(5,0);
+		_delay_ms(500);
+		turnOn();
 		setDirection(0);
 		setSpeed(68);
 		
@@ -120,6 +125,8 @@ ISR(INT0_vect)
 	{
 		playSound(2);
 		slowDown(5,0);
+		_delay_ms(500);
+		turnOn();
 		setDirection(1);
 		setSpeed(90);
 		
@@ -153,11 +160,11 @@ ISR(INT0_vect)
 	sei();
 }
 
-ISR(INT2_vect)
+ISR(INT1_vect)
 {
 	cli();
 	refleksTaeller ++;
-	SendChar2('v');
+	
 	if(refleksTaeller == 1)
 	{
 		
@@ -191,12 +198,16 @@ ISR(INT2_vect)
 	{
 		playSound(2);
 		slowDown(5,50);
+		_delay_ms(500);
+		turnOn();
 		
 	}
 	else if(refleksTaeller == 6)
 	{
 		playSound(2);
 		slowDown(5,0);
+		_delay_ms(500);
+		turnOn();
 		setDirection(0);
 		setSpeed(68);
 		
@@ -211,6 +222,8 @@ ISR(INT2_vect)
 	{
 		playSound(2);
 		slowDown(5,0);
+		_delay_ms(500);
+		turnOn();
 		setDirection(1);
 		setSpeed(90);
 		
@@ -233,14 +246,15 @@ ISR(INT2_vect)
 		playSound(2);
 		stop();
 		playSound(3);
+		_delay_ms(1000);
+		openDoor('v');
+		openDoor('h');
+		_delay_ms(3000);
+		closeDoor('v');
+		closeDoor('h');
 	}
-	_delay_ms(500);
-	if (refleksTaeller != 11 )
-	{
-		turnOn();
-	}
-	_delay_ms(500);
-	EIFR |= (1<<INTF2);
+	_delay_ms(1000);
+	EIFR |= (1<<INTF1);
 	sei();
 }
 

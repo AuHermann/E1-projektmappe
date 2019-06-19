@@ -25,7 +25,7 @@ void openDoor(unsigned char side)
 {
 	if (side == 'h')
 	{
-		for (pos=0; pos <=69; pos++)
+		for (pos=0; pos <=155; pos++)
 		{
 			OCR4A = (1*pos)+2250;
 			_delay_ms(10);
@@ -33,7 +33,7 @@ void openDoor(unsigned char side)
 	}
 	else if (side == 'v')
 	{
-		for (pos=0; pos <=69; pos++)
+		for (pos=0; pos <=155; pos++)
 		{
 			OCR4B = (1*pos)+2250;
 			_delay_ms(10);
@@ -45,15 +45,15 @@ void closeDoor(unsigned char side)
 {
 	if (side == 'h')
 	{
-		for (pos=69; pos >=0; pos--)
-		{
-			OCR4A = (1*pos)+2250;
-			_delay_ms(10);
-		}
+		//for (pos=155; pos >=0; pos--)
+		//{
+			OCR4A = 2250;
+			//_delay_ms(10);
+	//	}
 	}
 	else if (side == 'v')
 	{
-		for (pos=69; pos >=0; pos--)
+		for (pos=155; pos >=0; pos--)
 		{
 			OCR4B = (1*pos)+2250;
 			_delay_ms(10);

@@ -20,7 +20,7 @@ void initLedPort()
 void turnOn()
 {
 		OCR2A = 255;
-		OCR2B = 51;
+		OCR2B = 20;
 }
 
 void brake()
