@@ -24,12 +24,12 @@ void initMotor()
 void start()
 {
 	turnOn();
-	speedUp(5, 90);
+	speedUp(5, 100);
 }
 
 void stop()
 {
-	_delay_ms(500);
+	_delay_ms(400);
 	setSpeed(0);
 	brake();
 	_delay_ms(500);
