@@ -28,7 +28,8 @@ int main(void)
 	InitUART(9600, 8);
 	_delay_ms(1000);
 	initMP3();
-	_delay_ms(1000);	
+	_delay_ms(1000);
+	
 	  /* Replace with your application code */
     while (1) 
     {
